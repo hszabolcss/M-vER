@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Főoldal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+<div class="full-navbar">
+  <div class="navbar">
+
+    <!-- Bal szél: logó + szöveg szorosan mellette -->
+    <div class="left-section">
+      <img class="logo-img" 
+           src="../M-vER/images/logo.png" 
+           alt="MÁV logó">
+      <span class="logo-text">MÁV</span>
+    </div>
+
+    <!-- Középen / jobbra: menüpontok -->
+    <div class="nav-links">
+      <a href="#" class="active">Menetrendek</a>
+      <a href="#">Jegyek</a>
+      <a href="#">GYIK</a>
+      <a href="#">Ügyfélszolgálat</a>
+    </div>
+
+    <!-- Jobb szél: kereső gomb -->
+    <button class="search-btn" title="Keresés" aria-label="Keresés">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+
+  </div>
+</div>
+
 </body>
 </html>
