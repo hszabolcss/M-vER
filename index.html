@@ -3,96 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VÁM - Menetrendek, Jegyvásárlás</title>
+  <title>VÁM - Jegyvásárlás, Menetrend</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigációs sáv -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo-container">
-        <img src="https://via.placeholder.com/60x60/003087/ffffff?text=VÁM" alt="VÁM Logo" class="logo">
+  <!-- Navigáció -->
+  <header class="topbar">
+    <div class="navbar">
+      <div class="logo-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/MAV_logo.svg/512px-MAV_logo.svg.png" 
+             alt="VÁM Logo" class="logo">
         <span class="logo-text">VÁM</span>
       </div>
 
-      <div class="nav-links">
+      <div class="nav-menu">
         <a href="#" class="active">Menetrendek</a>
         <a href="#">Jegyek</a>
         <a href="#">GYIK</a>
         <a href="#">Ügyfélszolgálat</a>
       </div>
 
-      <button class="search-btn" aria-label="Keresés">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <button class="search-button" aria-label="Keresés">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </button>
-    </nav>
+    </div>
   </header>
 
-  <!-- Fő tartalom -->
-  <main>
-    <div class="hero-section">
-      <!-- Háttérkép -->
-      <div class="hero-background">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070" 
-             alt="Hegyi vasút" class="hero-image">
-      </div>
+  <!-- Hero kép -->
+  <div class="hero">
+    <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi vasút" class="hero-bg">
 
-      <!-- Overlay tartalom -->
-      <div class="hero-content">
-        <div class="service-box">
-          <div class="service-title">Jegyvásárlás, menetrend</div>
-          
-          <a href="#" class="service-item">
-            <span class="icon">🎫</span>
-            Jegyvásárlás
-            <span class="arrow">››</span>
-          </a>
-          
-          <a href="#" class="service-item">
-            <span class="icon">📍</span>
-            Menetrend, térkép
-            <span class="arrow">››</span>
-          </a>
-          
-          <a href="#" class="service-item">
-            <span class="icon">🇭🇺</span>
-            Országbérlet
-            <span class="arrow">››</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Lépések sáv -->
-      <div class="steps-bar">
-        <div class="step active">
-          <div class="step-number">1</div>
-          <div class="step-text">Jegyvásárlás</div>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-text">Késési biztosítás</div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-text">Könnyed használat</div>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="step-text">Gyorsabb betöltés</div>
-        </div>
-      </div>
+    <!-- Szolgáltatás doboz – most a kép ALATT van -->
+    <div class="service-panel">
+      <div class="panel-title">Jegyvásárlás, menetrend</div>
+      
+      <a href="#" class="service-row">
+        <span class="icon">🎫</span>
+        Jegyvásárlás
+        <span class="arrow">››</span>
+      </a>
+      <a href="#" class="service-row">
+        <span class="icon">📍</span>
+        Menetrend, térkép
+        <span class="arrow">››</span>
+      </a>
+      <a href="#" class="service-row">
+        <span class="icon">🗺️</span>
+        Országbérlet
+        <span class="arrow">››</span>
+      </a>
     </div>
+  </div>
 
-    <!-- Alsó gombok -->
-    <div class="bottom-buttons">
-      <a href="#" class="bottom-btn">Aktuális hírek</a>
-      <a href="#" class="bottom-btn">Ajánlatok, Tudnivalók</a>
+  <!-- Lépések sáv -->
+  <div class="progress-bar">
+    <div class="step active">
+      <div class="number">1</div>
+      <div class="label">Jegyvásárlás</div>
     </div>
-  </main>
+    <div class="step">
+      <div class="number">2</div>
+      <div class="label">Késési biztosítás</div>
+    </div>
+    <div class="step">
+      <div class="number">3</div>
+      <div class="label">Könnyed használat</div>
+    </div>
+    <div class="step">
+      <div class="number">4</div>
+      <div class="label">Gyorsabb betöltés</div>
+    </div>
+  </div>
+
+  <!-- Alsó gombok -->
+  <div class="bottom-section">
+    <a href="#" class="big-btn">Aktuális hírek</a>
+    <a href="#" class="big-btn">Ajánlatok, Tudnivalók</a>
+  </div>
 
 </body>
 </html>
