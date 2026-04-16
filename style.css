@@ -369,3 +369,61 @@ body {
   background: #002255;
   transform: translateY(-3px);
 }
+/* Jobb oldali dinamikus panel - még jobbrább */
+.dynamic-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(8%, -50%);     /* még jobbrább tolva */
+  width: 370px;
+  z-index: 15;
+}
+
+.dynamic-box {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 34px 30px;
+  text-align: center;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.22),
+    inset 0 3px 12px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.dynamic-icon {
+  font-size: 3.8rem;
+  margin-bottom: 16px;
+}
+
+.dynamic-box h3 {
+  font-size: 1.72rem;
+  color: #003087;
+  margin-bottom: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.dynamic-box p {
+  font-size: 1.08rem;
+  color: #333;
+  line-height: 1.58;
+  margin-bottom: 26px;
+}
+
+.dynamic-btn {
+  display: inline-block;
+  background: #003087;
+  color: white;
+  padding: 14px 38px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.dynamic-btn:hover {
+  background: #002255;
+  transform: translateY(-3px);
+}
