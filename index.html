@@ -33,12 +33,12 @@
     </div>
   </header>
 
-  <!-- Hero kép -->
+  <!-- Hero -->
   <div class="hero-container">
     <div class="hero">
       <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg">
       
-      <!-- Bal oldali kék panel -->
+      <!-- Bal oldali service panel -->
       <div class="service-panel">
         <div class="panel-title">Jegyvásárlás, menetrend</div>
         
@@ -59,7 +59,7 @@
         </a>
       </div>
 
-      <!-- Jobb oldali KICSI dinamikus ablak a képben -->
+      <!-- Jobb oldali dinamikus panel (a képen belül) -->
       <div class="dynamic-panel" id="dynamic-panel">
         <div class="dynamic-box">
           <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <!-- Léptető sáv lent (marad változatlan) -->
+  <!-- Lépések sáv + progress -->
   <div class="progress-section">
     <div class="progress-bar">
       <div class="step active" data-step="1">
@@ -103,6 +103,65 @@
     <a href="#" class="big-btn">Ajánlatok, Tudnivalók</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const stepData = [
+      { icon: "🎟️", title: "Gyors jegyvásárlás", desc: "Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben." },
+      { icon: "🛡️", title: "Késési biztosítás", desc: "Automatikus kártérítés már 5 perc késés esetén is. A rendszer mindent intéz Ön helyett." },
+      { icon: "📱", title: "Könnyed használat", desc: "Mobilbarát felület, egyszerű és intuitív kezelőfelület. Regisztráció nélkül is használható." },
+      { icon: "⚡", title: "Gyorsabb betöltés", desc: "Optimalizált oldal, amely minden eszközön és hálózaton villámgyorsan betöltődik." }
+    ];
+
+    let currentStep = 0;
+    const cycleTime = 6500; // 6.5 másodperc ciklus (jobban látható váltás)
+    let timerInterval = null;
+
+    function activateStep(index) {
+      // Lépések aktiválása
+      document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+      const activeStep = document.querySelector(`.step[data-step="${index + 1}"]`);
+      if (activeStep) activeStep.classList.add('active');
+
+      // Dinamikus tartalom frissítése
+      document.getElementById('dynamic-icon').textContent = stepData[index].icon;
+      document.getElementById('dynamic-title').textContent = stepData[index].title;
+      document.getElementById('dynamic-desc').textContent = stepData[index].desc;
+
+      currentStep = index;
+
+      // Progress bar újraindítása
+      const progress = document.getElementById('main-progress');
+      progress.style.transition = 'none';
+      progress.style.width = '0%';
+
+      setTimeout(() => {
+        progress.style.transition = `width ${cycleTime}ms linear`;
+        progress.style.width = '100%';
+      }, 50);
+    }
+
+    function startAutoCycle() {
+      if (timerInterval) clearInterval(timerInterval);
+      
+      timerInterval = setInterval(() => {
+        let next = (currentStep + 1) % stepData.length;
+        activateStep(next);
+      }, cycleTime);
+    }
+
+    // Oldal betöltése
+    window.onload = () => {
+      activateStep(0);
+      startAutoCycle();
+
+      // Kézi kattintás támogatása
+      document.querySelectorAll('.step').forEach((step, index) => {
+        step.addEventListener('click', () => {
+          clearInterval(timerInterval);
+          activateStep(index);
+          startAutoCycle();
+        });
+      });
+    };
+  </script>
 </body>
 </html>
