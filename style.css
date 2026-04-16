@@ -25,15 +25,39 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   height: 78px;
-  display: flex;
+  display: grid; /* Flex helyett Grid */
+  grid-template-columns: 1fr auto 1fr; /* Három egyenlő oszlop: Bal, Közép, Jobb */
   align-items: center;
-  justify-content: space-between;
 }
 
+/* A logó maradjon a bal szélén a saját oszlopának */
 .logo-section {
   display: flex;
   align-items: center;
   gap: 12px;
+  justify-self: start;
+}
+
+/* A menü legyen a középső oszlop közepén */
+.nav-menu {
+  display: flex;
+  gap: 38px;
+  justify-self: center; /* Ez teszi abszolút középre */
+}
+
+/* A gomb pedig a jobb oldali oszlop végén */
+.search-button {
+  justify-self: end; /* Ez tolja ki a jobb szélére */
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 .logo {
   display: flex;
@@ -82,6 +106,8 @@ body {
 }
 
 .search-button {
+  margin-left: 400px; /* Növeld ezt az értéket (pl. 80px vagy 100px), amíg elég jobbra nem kerül */
+  background: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
   border: none;
   width: 48px;
