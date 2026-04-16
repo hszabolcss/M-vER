@@ -36,7 +36,10 @@ body {
   gap: 12px;
 }
 .logo {
-  height: 52px;
+  display: flex;
+  align-items: center;
+  height: 85px;
+  width: 190px;
 }
 .logo-text {
   color: white;
