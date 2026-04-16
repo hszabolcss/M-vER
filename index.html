@@ -33,11 +33,12 @@
     </div>
   </header>
 
-  <!-- Hero + bal oldali doboz -->
+  <!-- Hero rész -->
   <div class="hero-container">
     <div class="hero">
       <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg">
       
+      <!-- Bal oldali kék panel -->
       <div class="service-panel">
         <div class="panel-title">Jegyvásárlás, menetrend</div>
         
@@ -60,9 +61,9 @@
     </div>
   </div>
 
-  <!-- Lépések sáv -->
-  <div class="progress-container">
-    <div class="progress-bar" id="steps">
+  <!-- Lépések sáv + progress csík -->
+  <div class="progress-section">
+    <div class="progress-bar">
       <div class="step active" data-step="1">
         <div class="number">1</div>
         <div class="label">Jegyvásárlás</div>
@@ -80,6 +81,21 @@
         <div class="label">Gyorsabb betöltés</div>
       </div>
     </div>
+
+    <!-- Sárga progress csík -->
+    <div class="progress-track">
+      <div class="progress-fill" id="main-progress"></div>
+    </div>
+  </div>
+
+  <!-- DINAMIKUS TARTALOM – a lépések alatt (pontosan ahogy a képen van) -->
+  <div class="dynamic-content" id="dynamic-content">
+    <div class="dynamic-box">
+      <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
+      <h3 id="dynamic-title">Gyors jegyvásárlás</h3>
+      <p id="dynamic-desc">Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben.</p>
+      <a href="#" class="dynamic-btn">Indítás most →</a>
+    </div>
   </div>
 
   <!-- Alsó gombok -->
@@ -88,6 +104,83 @@
     <a href="#" class="big-btn">Ajánlatok, Tudnivalók</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const stepData = [
+      {
+        icon: "🎟️",
+        title: "Gyors jegyvásárlás",
+        desc: "Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben."
+      },
+      {
+        icon: "🛡️",
+        title: "Késési biztosítás",
+        desc: "Automatikus kártérítés már 5 perc késés esetén is. A rendszer mindent intéz Ön helyett."
+      },
+      {
+        icon: "📱",
+        title: "Könnyed használat",
+        desc: "Mobilbarát felület, egyszerű és intuitív kezelőfelület. Regisztráció nélkül is használható."
+      },
+      {
+        icon: "⚡",
+        title: "Gyorsabb betöltés",
+        desc: "Optimalizált oldal, amely minden eszközön és hálózaton villámgyorsan betöltődik."
+      }
+    ];
+
+    let currentStep = 0;
+    const cycleTime = 7000; // 7 másodperc ciklusonként
+    let timerInterval = null;
+
+    function activateStep(index) {
+      // Minden lépést deaktiválunk
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      
+      // Aktiváljuk a kiválasztottat
+      const activeStep = document.querySelector(`.step[data-step="${index + 1}"]`);
+      if (activeStep) activeStep.classList.add('active');
+
+      // Frissítjük a dinamikus tartalmat
+      document.getElementById('dynamic-icon').textContent = stepData[index].icon;
+      document.getElementById('dynamic-title').textContent = stepData[index].title;
+      document.getElementById('dynamic-desc').textContent = stepData[index].desc;
+
+      currentStep = index;
+
+      // Sárga progress csík újraindítása
+      const progressFill = document.getElementById('main-progress');
+      progressFill.style.transition = 'none';
+      progressFill.style.width = '0%';
+      
+      setTimeout(() => {
+        progressFill.style.transition = `width ${cycleTime}ms linear`;
+        progressFill.style.width = '100%';
+      }, 20);
+    }
+
+    function startAutoCycle() {
+      if (timerInterval) clearInterval(timerInterval);
+      
+      timerInterval = setInterval(() => {
+        let next = (currentStep + 1) % stepData.length;
+        activateStep(next);
+      }, cycleTime);
+    }
+
+    // Oldal betöltésekor
+    window.onload = () => {
+      activateStep(0);
+      startAutoCycle();
+
+      // Kattintásra is lehessen váltani
+      document.querySelectorAll('.step').forEach((step, index) => {
+        step.addEventListener('click', () => {
+          clearInterval(timerInterval);
+          activateStep(index);
+          startAutoCycle();
+        });
+      });
+    };
+  </script>
 </body>
 </html>
