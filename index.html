@@ -33,12 +33,11 @@
     </div>
   </header>
 
-  <!-- Hero kép + bal oldali kék doboz -->
+  <!-- Hero + bal oldali doboz -->
   <div class="hero-container">
     <div class="hero">
-      <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi vasút" class="hero-bg">
+      <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg">
       
-      <!-- Bal oldali kék szolgáltatás doboz -->
       <div class="service-panel">
         <div class="panel-title">Jegyvásárlás, menetrend</div>
         
@@ -61,22 +60,22 @@
     </div>
   </div>
 
-  <!-- Lépések sáv – pontosan úgy, mint a képen (közvetlenül a kép alatt, fehér lekerekített) -->
+  <!-- Lépések sáv -->
   <div class="progress-container">
-    <div class="progress-bar">
-      <div class="step active">
+    <div class="progress-bar" id="steps">
+      <div class="step active" data-step="1">
         <div class="number">1</div>
         <div class="label">Jegyvásárlás</div>
       </div>
-      <div class="step">
+      <div class="step" data-step="2">
         <div class="number">2</div>
         <div class="label">Késési biztosítás</div>
       </div>
-      <div class="step">
+      <div class="step" data-step="3">
         <div class="number">3</div>
         <div class="label">Könnyed használat</div>
       </div>
-      <div class="step">
+      <div class="step" data-step="4">
         <div class="number">4</div>
         <div class="label">Gyorsabb betöltés</div>
       </div>
@@ -89,5 +88,6 @@
     <a href="#" class="big-btn">Ajánlatok, Tudnivalók</a>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
