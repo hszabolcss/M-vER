@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MÁV - Főoldal</title>
+    <title>MÁV - Jegyvásárlás, Menetrend</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,12 +13,14 @@
           <img src="./images/nohattermavlogo.png" alt="VÁM Logo" class="logo" />
           <span class="logo-text">MÁV</span>
         </div>
+
         <div class="nav-menu">
           <a href="index.html" class="nav-link active">Menetrendek</a>
           <a href="jegyek.html" class="nav-link">Jegyek</a>
           <a href="gyik.html" class="nav-link">GYIK</a>
           <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
         </div>
+
         <button class="search-button" aria-label="Bejelentkezés">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -28,60 +30,118 @@
       </div>
     </header>
 
-    <main>
-      <div class="hero-container">
-        <div class="hero">
-          <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg" />
-          <div class="service-panel">
-            <div class="panel-title">Gyorsmenü</div>
-            <a href="jegyek.html" class="service-row">
-              <span class="icon">🎫</span> Jegyvásárlás <span class="arrow">››</span>
-            </a>
-            <a href="#" class="service-row">
-              <span class="icon">📍</span> Térképes nézet <span class="arrow">››</span>
-            </a>
-            <a href="#" class="service-row">
-              <span class="icon">🗺️</span> Országbérlet <span class="arrow">››</span>
-            </a>
-          </div>
+    <main id="main-content">
+      <div id="page-home" class="page-section active">
+        <div class="hero-container">
+          <div class="hero">
+            <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg" />
 
-          <div class="dynamic-panel">
-            <div class="dynamic-box">
-              <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
-              <h3 id="dynamic-title">Gyors jegyvásárlás</h3>
-              <p id="dynamic-desc">Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással.</p>
-              <a href="jegyek.html" class="dynamic-btn">Indítás most →</a>
+            <div class="service-panel">
+              <div class="panel-title">Gyorsmenü</div>
+              <a href="jegyek.html" class="service-row">
+                <span class="icon">🎫</span> Jegyvásárlás <span class="arrow">››</span>
+              </a>
+              <a href="#" class="service-row">
+                <span class="icon">📍</span> Térképes nézet <span class="arrow">››</span>
+              </a>
+              <a href="#" class="service-row">
+                <span class="icon">🗺️</span> Országbérlet <span class="arrow">››</span>
+              </a>
+            </div>
+
+            <div class="dynamic-panel" id="dynamic-panel">
+              <div class="dynamic-box">
+                <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
+                <h3 id="dynamic-title">Gyors jegyvásárlás</h3>
+                <p id="dynamic-desc">
+                  Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben.
+                </p>
+                <a href="jegyek.html" class="dynamic-btn">Indítás most →</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="progress-section">
-        <div class="progress-bar">
-          <div class="step active" data-step="1"><div class="number">1</div><div class="label">Jegyvásárlás</div></div>
-          <div class="step" data-step="2"><div class="number">2</div><div class="label">Késési biztosítás</div></div>
-          <div class="step" data-step="3"><div class="number">3</div><div class="label">Mobilbarát</div></div>
-          <div class="step" data-step="4"><div class="number">4</div><div class="label">Gyorsaság</div></div>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="step active" data-step="1">
+              <div class="number">1</div>
+              <div class="label">Jegyvásárlás</div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="number">2</div>
+              <div class="label">Késési biztosítás</div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="number">3</div>
+              <div class="label">Mobilbarát</div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="number">4</div>
+              <div class="label">Gyorsaság</div>
+            </div>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="main-progress"></div>
+          </div>
         </div>
-        <div class="progress-track"><div class="progress-fill" id="main-progress"></div></div>
-      </div>
 
-      <div class="content-container">
-        <div class="section-header">
-          <h2>Aktuális hírek</h2>
-          <a href="#" class="view-all">Összes hír &rarr;</a>
-        </div>
-        <div class="card-grid">
+        <div class="content-container">
+          <div class="section-header">
+            <h2>Aktuális hírek</h2>
+            <a href="#" class="view-all">Összes hír megtekintése &rarr;</a>
+          </div>
+          <div class="card-grid">
             <div class="news-card">
-                <img src="https://picsum.photos/id/1033/400/250" alt="Vonat" />
-                <div class="card-content">
-                  <span class="badge">Közlemény</span>
-                  <h3>Tavaszi menetrendi változások</h3>
-                  <p>Március 1-től több vonalon is sűrítjük a járatokat.</p>
-                  <a href="#" class="read-more">Elolvasom</a>
-                </div>
+              <img src="https://picsum.photos/id/1033/400/250" alt="Vonat" />
+              <div class="card-content">
+                <span class="badge">Közlemény</span>
+                <h3>Tavaszi menetrendi változások</h3>
+                <p>Március 1-től több vonalon is sűrítjük a járatokat a reggeli csúcsidőben.</p>
+                <a href="#" class="read-more">Elolvasom</a>
+              </div>
             </div>
+            <div class="news-card">
+              <img src="https://picsum.photos/id/1070/400/250" alt="Pályaudvar" />
+              <div class="card-content">
+                <span class="badge warning">Figyelem</span>
+                <h3>Pályakarbantartás a Nyugati vonalán</h3>
+                <p>Hétvégén pótlóbuszok közlekednek bizonyos szakaszokon felújítás miatt.</p>
+                <a href="#" class="read-more">Elolvasom</a>
+              </div>
             </div>
+            <div class="news-card">
+              <img src="https://picsum.photos/id/119/400/250" alt="Laptop" />
+              <div class="card-content">
+                <span class="badge success">Újítás</span>
+                <h3>Megújult a VÁM applikáció</h3>
+                <p>Még gyorsabb jegyvásárlás és valós idejű vonatinformációk a mobilján.</p>
+                <a href="#" class="read-more">Elolvasom</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-header" style="margin-top: 60px">
+            <h2>Ajánlatok, Tudnivalók</h2>
+          </div>
+          <div class="offers-grid">
+            <div class="offer-box">
+              <h3>🌍 Országbérlet és Vármegyebérlet</h3>
+              <p>Utazzon korlátlanul havi fix áron! Diákoknak 90% kedvezmény biztosított.</p>
+              <button class="dynamic-btn outline">Részletek</button>
+            </div>
+            <div class="offer-box">
+              <h3>🚲 Kerékpárszállítás</h3>
+              <p>Hozza magával kerékpárját a kirándulásra. Ismerje meg a feltételeket és a jegyárakat.</p>
+              <button class="dynamic-btn outline">Részletek</button>
+            </div>
+            <div class="offer-box">
+              <h3>🐶 Kisállat szállítás</h3>
+              <p>Ne hagyja otthon kedvencét! Tájékozódjon a kutya- és kisállatszállítás szabályairól.</p>
+              <button class="dynamic-btn outline">Részletek</button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
