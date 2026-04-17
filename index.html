@@ -21,12 +21,32 @@
           <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
         </div>
 
-        <button class="search-button" aria-label="Bejelentkezés">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </button>
+        <div class="user-menu-container" style="position: relative; justify-self: end;">
+          <button class="search-button" id="login-trigger" aria-label="Bejelentkezés">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <div class="login-dropdown" id="login-dropdown">
+            <h3>Bejelentkezés</h3>
+            <form>
+              <input type="text" placeholder="Felhasználónév vagy e-mail" class="input-field" />
+              <input type="password" placeholder="Jelszó" class="input-field" />
+              <div class="login-options">
+                <label style="display: flex; align-items: center; gap: 5px;">
+                  <input type="checkbox"> Emlékezz rám
+                </label>
+                <a href="#" style="color: #0055d4; text-decoration: none; font-size: 0.85rem;">Elfelejtett jelszó?</a>
+              </div>
+              <button type="submit" class="dynamic-btn" style="width: 100%; margin-top: 10px;">Belépés</button>
+              <p style="text-align: center; font-size: 0.85rem; margin-top: 15px;">
+                Nincs még fiókja? <a href="#" style="color: #0055d4; text-decoration: none;">Regisztráció</a>
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </header>
 

@@ -78,3 +78,24 @@ window.onload = () => {
     });
   }
 };
+
+// Login ablak kezelése
+document.addEventListener('DOMContentLoaded', () => {
+    const loginTrigger = document.getElementById('login-trigger');
+    const loginDropdown = document.getElementById('login-dropdown');
+
+    if (loginTrigger && loginDropdown) {
+        // Kattintásra nyitás/zárás
+        loginTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            loginDropdown.classList.toggle('active');
+        });
+
+        // Ha máshova kattintunk, záródjon be
+        document.addEventListener('click', (e) => {
+            if (!loginDropdown.contains(e.target) && e.target !== loginTrigger) {
+                loginDropdown.classList.remove('active');
+            }
+        });
+    }
+});
