@@ -164,7 +164,6 @@ document.querySelectorAll('.offer-btn').forEach(btn => {
     modal.style.display = "block";
   });
 });
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginTrigger = document.getElementById('login-trigger');
   const loginDropdown = document.getElementById('login-dropdown');
