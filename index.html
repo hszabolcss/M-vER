@@ -3,297 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MÁV - Jegyvásárlás, Menetrend</title>
+    <title>MÁV - Főoldal</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigáció -->
     <header class="topbar">
       <div class="navbar">
         <div class="logo-section">
           <img src="./images/nohattermavlogo.png" alt="VÁM Logo" class="logo" />
           <span class="logo-text">MÁV</span>
         </div>
-
         <div class="nav-menu">
-          <a href="#" class="nav-link active" data-target="home">Menetrendek</a>
-          <a href="#" class="nav-link" data-target="tickets">Jegyek</a>
-          <a href="#" class="nav-link" data-target="faq">GYIK</a>
-          <a href="#" class="nav-link" data-target="contact">Ügyfélszolgálat</a>
+          <a href="index.html" class="nav-link active">Menetrendek</a>
+          <a href="jegyek.html" class="nav-link">Jegyek</a>
+          <a href="gyik.html" class="nav-link">GYIK</a>
+          <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
         </div>
-
         <button class="search-button" aria-label="Bejelentkezés">
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="white"
-    stroke-width="2.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-    <circle cx="12" cy="7" r="4"></circle>
-  </svg>
-</button>
-       
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </button>
       </div>
     </header>
 
-    <main id="main-content">
-      <div id="page-home" class="page-section active">
-        <div class="hero-container">
-          <div class="hero">
-            <img
-              src="https://picsum.photos/id/1015/1400/520"
-              alt="Hegyi táj"
-              class="hero-bg"
-            />
-
-            <div class="service-panel">
-              <div class="panel-title">Gyorsmenü</div>
-              <a href="#" class="service-row" onclick="switchPage('tickets')">
-                <span class="icon">🎫</span>
-                Jegyvásárlás
-                <span class="arrow">››</span>
-              </a>
-              <a href="#" class="service-row">
-                <span class="icon">📍</span>
-                Térképes nézet
-                <span class="arrow">››</span>
-              </a>
-              <a href="#" class="service-row">
-                <span class="icon">🗺️</span>
-                Országbérlet
-                <span class="arrow">››</span>
-              </a>
-            </div>
-
-            <div class="dynamic-panel" id="dynamic-panel">
-              <div class="dynamic-box">
-                <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
-                <h3 id="dynamic-title">Gyors jegyvásárlás</h3>
-                <p id="dynamic-desc">
-                  Válasszon jegyet indulási és érkezési állomás között mindössze
-                  3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben.
-                </p>
-                <a href="#" class="dynamic-btn" onclick="switchPage('tickets')"
-                  >Indítás most →</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="progress-section">
-          <div class="progress-bar">
-            <div class="step active" data-step="1">
-              <div class="number">1</div>
-              <div class="label">Jegyvásárlás</div>
-            </div>
-            <div class="step" data-step="2">
-              <div class="number">2</div>
-              <div class="label">Késési biztosítás</div>
-            </div>
-            <div class="step" data-step="3">
-              <div class="number">3</div>
-              <div class="label">Mobilbarát</div>
-            </div>
-            <div class="step" data-step="4">
-              <div class="number">4</div>
-              <div class="label">Gyorsaság</div>
-            </div>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" id="main-progress"></div>
-          </div>
-        </div>
-
-        <div class="content-container">
-          <div class="section-header">
-            <h2>Aktuális hírek</h2>
-            <a href="#" class="view-all">Összes hír megtekintése &rarr;</a>
-          </div>
-          <div class="card-grid">
-            <div class="news-card">
-              <img src="https://picsum.photos/id/1033/400/250" alt="Vonat" />
-              <div class="card-content">
-                <span class="badge">Közlemény</span>
-                <h3>Tavaszi menetrendi változások</h3>
-                <p>
-                  Március 1-től több vonalon is sűrítjük a járatokat a reggeli
-                  csúcsidőben.
-                </p>
-                <a href="#" class="read-more">Elolvasom</a>
-              </div>
-            </div>
-            <div class="news-card">
-              <img
-                src="https://picsum.photos/id/1070/400/250"
-                alt="Pályaudvar"
-              />
-              <div class="card-content">
-                <span class="badge warning">Figyelem</span>
-                <h3>Pályakarbantartás a Nyugati vonalán</h3>
-                <p>
-                  Hétvégén pótlóbuszok közlekednek bizonyos szakaszokon
-                  felújítás miatt.
-                </p>
-                <a href="#" class="read-more">Elolvasom</a>
-              </div>
-            </div>
-            <div class="news-card">
-              <img src="https://picsum.photos/id/119/400/250" alt="Laptop" />
-              <div class="card-content">
-                <span class="badge success">Újítás</span>
-                <h3>Megújult a VÁM applikáció</h3>
-                <p>
-                  Még gyorsabb jegyvásárlás és valós idejű vonatinformációk a
-                  mobilján.
-                </p>
-                <a href="#" class="read-more">Elolvasom</a>
-              </div>
-            </div>
+    <main>
+      <div class="hero-container">
+        <div class="hero">
+          <img src="https://picsum.photos/id/1015/1400/520" alt="Hegyi táj" class="hero-bg" />
+          <div class="service-panel">
+            <div class="panel-title">Gyorsmenü</div>
+            <a href="jegyek.html" class="service-row">
+              <span class="icon">🎫</span> Jegyvásárlás <span class="arrow">››</span>
+            </a>
+            <a href="#" class="service-row">
+              <span class="icon">📍</span> Térképes nézet <span class="arrow">››</span>
+            </a>
+            <a href="#" class="service-row">
+              <span class="icon">🗺️</span> Országbérlet <span class="arrow">››</span>
+            </a>
           </div>
 
-          <div class="section-header" style="margin-top: 60px">
-            <h2>Ajánlatok, Tudnivalók</h2>
-          </div>
-          <div class="offers-grid">
-            <div class="offer-box">
-              <h3>🌍 Országbérlet és Vármegyebérlet</h3>
-              <p>
-                Utazzon korlátlanul havi fix áron! Diákoknak 90% kedvezmény
-                biztosított.
-              </p>
-              <button class="dynamic-btn outline">Részletek</button>
-            </div>
-            <div class="offer-box">
-              <h3>🚲 Kerékpárszállítás</h3>
-              <p>
-                Hozza magával kerékpárját a kirándulásra. Ismerje meg a
-                feltételeket és a jegyárakat.
-              </p>
-              <button class="dynamic-btn outline">Részletek</button>
-            </div>
-            <div class="offer-box">
-              <h3>🐶 Kisállat szállítás</h3>
-              <p>
-                Ne hagyja otthon kedvencét! Tájékozódjon a kutya- és
-                kisállatszállítás szabályairól.
-              </p>
-              <button class="dynamic-btn outline">Részletek</button>
+          <div class="dynamic-panel">
+            <div class="dynamic-box">
+              <div class="dynamic-icon" id="dynamic-icon">🎟️</div>
+              <h3 id="dynamic-title">Gyors jegyvásárlás</h3>
+              <p id="dynamic-desc">Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással.</p>
+              <a href="jegyek.html" class="dynamic-btn">Indítás most →</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="page-tickets" class="page-section">
-        <div class="content-container inner-page">
-          <h2>Jegyvásárlás és Menetrend kereső</h2>
-          <div class="ticket-form-container">
-            <form
-              class="ticket-form"
-              onsubmit="
-                event.preventDefault();
-                alert('Keresés indítása...');
-              "
-            >
-              <div class="form-group">
-                <label>Honnan?</label>
-                <input type="text" placeholder="Pl.: Budapest-Keleti" />
-              </div>
-              <div class="form-icon">⇄</div>
-              <div class="form-group">
-                <label>Hova?</label>
-                <input type="text" placeholder="Pl.: Debrecen" />
-              </div>
-              <div class="form-group">
-                <label>Dátum</label>
-                <input type="date" />
-              </div>
-              <div class="form-group">
-                <label>Utasok száma</label>
-                <select>
-                  <option>1 felnőtt</option>
-                  <option>2 felnőtt</option>
-                  <option>1 felnőtt, 1 diák</option>
-                </select>
-              </div>
-              <button type="submit" class="dynamic-btn">Keresés</button>
-            </form>
-          </div>
+      <div class="progress-section">
+        <div class="progress-bar">
+          <div class="step active" data-step="1"><div class="number">1</div><div class="label">Jegyvásárlás</div></div>
+          <div class="step" data-step="2"><div class="number">2</div><div class="label">Késési biztosítás</div></div>
+          <div class="step" data-step="3"><div class="number">3</div><div class="label">Mobilbarát</div></div>
+          <div class="step" data-step="4"><div class="number">4</div><div class="label">Gyorsaság</div></div>
         </div>
+        <div class="progress-track"><div class="progress-fill" id="main-progress"></div></div>
       </div>
 
-      <div id="page-faq" class="page-section">
-        <div class="content-container inner-page">
-          <h2>Gyakori Kérdések (GYIK)</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <h4>Hogyan tudom visszaváltani a jegyemet?</h4>
-              <p>
-                Az online vásárolt jegyeket az indulás előtt 1 órával az
-                applikációban vagy a weboldalon a profiljába belépve tudja
-                visszaváltani.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h4>Mi a teendő, ha késik a vonat?</h4>
-              <p>
-                Jelentős késés esetén automatikusan kártérítésre jogosult,
-                melyet online felületünkön igényelhet a jegyszám megadásával.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h4>Mennyibe kerül a kerékpárjegy?</h4>
-              <p>
-                A kerékpárjegy ára távolságtól függetlenül egységesen 500 Ft a
-                kijelölt vonatokon.
-              </p>
-            </div>
-          </div>
+      <div class="content-container">
+        <div class="section-header">
+          <h2>Aktuális hírek</h2>
+          <a href="#" class="view-all">Összes hír &rarr;</a>
         </div>
-      </div>
-
-      <div id="page-contact" class="page-section">
-        <div class="content-container inner-page">
-          <h2>Ügyfélszolgálat és Kapcsolat</h2>
-          <div class="contact-grid">
-            <div class="contact-info">
-              <div class="info-card">
-                <h3>📞 Telefonos ügyfélszolgálat</h3>
-                <p>
-                  +36 1 123 4567<br /><small>(Minden nap 0-24 órában)</small>
-                </p>
-              </div>
-              <div class="info-card">
-                <h3>✉️ E-mail</h3>
-                <p>ugyfelszolgalat@vam.hu</p>
-              </div>
+        <div class="card-grid">
+            <div class="news-card">
+                <img src="https://picsum.photos/id/1033/400/250" alt="Vonat" />
+                <div class="card-content">
+                  <span class="badge">Közlemény</span>
+                  <h3>Tavaszi menetrendi változások</h3>
+                  <p>Március 1-től több vonalon is sűrítjük a járatokat.</p>
+                  <a href="#" class="read-more">Elolvasom</a>
+                </div>
             </div>
-            <div class="contact-form">
-              <h3>Írjon nekünk</h3>
-              <input type="text" placeholder="Név" class="input-field" />
-              <input
-                type="email"
-                placeholder="E-mail cím"
-                class="input-field"
-              />
-              <textarea
-                placeholder="Üzenet"
-                rows="5"
-                class="input-field"
-              ></textarea>
-              <button class="dynamic-btn">Üzenet küldése</button>
             </div>
-          </div>
-        </div>
       </div>
     </main>
 
@@ -301,118 +89,6 @@
       <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
     </footer>
 
-    <script>
-      // --- 1. Dinamikus tartalom logikája a Főoldalon ---
-      const stepData = [
-        {
-          icon: "🎟️",
-          title: "Gyors jegyvásárlás",
-          desc: "Válasszon jegyet indulási és érkezési állomás között mindössze 3 kattintással. Azonnali visszaigazolás e-mailben és SMS-ben.",
-        },
-        {
-          icon: "🛡️",
-          title: "Késési biztosítás",
-          desc: "Automatikus kártérítés már 5 perc késés esetén is. A rendszer mindent intéz Ön helyett.",
-        },
-        {
-          icon: "📱",
-          title: "Könnyed használat",
-          desc: "Mobilbarát felület, egyszerű és intuitív kezelőfelület. Regisztráció nélkül is használható.",
-        },
-        {
-          icon: "⚡",
-          title: "Gyorsabb betöltés",
-          desc: "Optimalizált oldal, amely minden eszközön és hálózaton villámgyorsan betöltődik.",
-        },
-      ];
-
-      let currentStep = 0;
-      const cycleTime = 6500;
-      let timerInterval = null;
-
-      function activateStep(index) {
-        document
-          .querySelectorAll(".step")
-          .forEach((step) => step.classList.remove("active"));
-        const activeStep = document.querySelector(
-          `.step[data-step="${index + 1}"]`,
-        );
-        if (activeStep) activeStep.classList.add("active");
-
-        document.getElementById("dynamic-icon").textContent =
-          stepData[index].icon;
-        document.getElementById("dynamic-title").textContent =
-          stepData[index].title;
-        document.getElementById("dynamic-desc").textContent =
-          stepData[index].desc;
-
-        currentStep = index;
-
-        const progress = document.getElementById("main-progress");
-        progress.style.transition = "none";
-        progress.style.width = "0%";
-        setTimeout(() => {
-          progress.style.transition = `width ${cycleTime}ms linear`;
-          progress.style.width = "100%";
-        }, 50);
-      }
-
-      function startAutoCycle() {
-        if (timerInterval) clearInterval(timerInterval);
-        timerInterval = setInterval(() => {
-          let next = (currentStep + 1) % stepData.length;
-          activateStep(next);
-        }, cycleTime);
-      }
-
-      // --- 2. Navigáció és oldalak közötti váltás logikája ---
-      function switchPage(targetId) {
-        // Nav linkek frissítése
-        document.querySelectorAll(".nav-link").forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("data-target") === targetId) {
-            link.classList.add("active");
-          }
-        });
-
-        // Oldalak (szekciók) elrejtése / megjelenítése
-        document.querySelectorAll(".page-section").forEach((page) => {
-          page.classList.remove("active");
-        });
-        document.getElementById(`page-${targetId}`).classList.add("active");
-
-        // Ha nem a főoldalon vagyunk, állítsuk meg az animációt
-        if (targetId === "home") {
-          activateStep(currentStep); // Progress bar újraindítása
-          startAutoCycle();
-        } else {
-          clearInterval(timerInterval);
-        }
-      }
-
-      // Inicializálás betöltéskor
-      window.onload = () => {
-        activateStep(0);
-        startAutoCycle();
-
-        // Klikk események a step-ekre
-        document.querySelectorAll(".step").forEach((step, index) => {
-          step.addEventListener("click", () => {
-            clearInterval(timerInterval);
-            activateStep(index);
-            startAutoCycle();
-          });
-        });
-
-        // Navigációs linkek bekötése
-        document.querySelectorAll(".nav-link").forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = e.target.getAttribute("data-target");
-            switchPage(target);
-          });
-        });
-      };
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
