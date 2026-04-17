@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MÁV - Jegyvásárlás</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="navbar">
+        <div class="logo-section">
+            <img src="./images/nohattermavlogo.png" alt="VÁM Logo" class="logo" />
+            <span class="logo-text">MÁV</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Menetrendek</a>
+          <a href="jegyek.html" class="nav-link active">Jegyek</a>
+          <a href="gyik.html" class="nav-link">GYIK</a>
+          <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
+        </div>
+        <button class="search-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="content-container inner-page">
+      <h2>Jegyvásárlás</h2>
+      <div class="ticket-form-container">
+        <form class="ticket-form">
+          <div class="form-group">
+            <label>Honnan?</label>
+            <input type="text" placeholder="Indulási állomás" class="input-field" />
+          </div>
+          <div class="form-icon">⇄</div>
+          <div class="form-group">
+            <label>Hova?</label>
+            <input type="text" placeholder="Célállomás" class="input-field" />
+          </div>
+          <div class="form-group">
+            <label>Dátum</label>
+            <input type="date" class="input-field" />
+          </div>
+          <button type="submit" class="dynamic-btn">Keresés</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
+    </footer>
+  </body>
+</html>
