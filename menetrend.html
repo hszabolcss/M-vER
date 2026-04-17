@@ -1,47 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menetrend</title>
-</head>
-<body>
-      <div id="page-tickets" class="page-section">
-        <div class="content-container inner-page">
-          <h2>Jegyvásárlás és Menetrend kereső</h2>
-          <div class="ticket-form-container">
-            <form
-              class="ticket-form"
-              onsubmit="
-                event.preventDefault();
-                alert('Keresés indítása...');
-              "
-            >
-              <div class="form-group">
-                <label>Honnan?</label>
-                <input type="text" placeholder="Pl.: Budapest-Keleti" />
-              </div>
-              <div class="form-icon">⇄</div>
-              <div class="form-group">
-                <label>Hova?</label>
-                <input type="text" placeholder="Pl.: Debrecen" />
-              </div>
-              <div class="form-group">
-                <label>Dátum</label>
-                <input type="date" />
-              </div>
-              <div class="form-group">
-                <label>Utasok száma</label>
-                <select>
-                  <option>1 felnőtt</option>
-                  <option>2 felnőtt</option>
-                  <option>1 felnőtt, 1 diák</option>
-                </select>
-              </div>
-              <button type="submit" class="dynamic-btn">Keresés</button>
-            </form>
-          </div>
+  </head>
+  <body>
+    <div id="page-tickets" class="page-section">
+      <div class="content-container inner-page">
+        <h2>Jegyvásárlás és Menetrend kereső</h2>
+        <div class="ticket-form-container">
+          <form
+            class="ticket-form"
+            onsubmit="
+              event.preventDefault();
+              alert('Keresés indítása...');
+            "
+          >
+            <div class="form-group">
+              <label>Honnan?</label>
+              <input type="text" placeholder="Pl.: Budapest-Keleti" />
+            </div>
+            <div class="form-icon">⇄</div>
+            <div class="form-group">
+              <label>Hova?</label>
+              <input type="text" placeholder="Pl.: Debrecen" />
+            </div>
+            <div class="form-group">
+              <label>Dátum</label>
+              <input type="date" />
+            </div>
+            <div class="form-group">
+              <label>Utasok száma</label>
+              <select>
+                <option>1 felnőtt</option>
+                <option>2 felnőtt</option>
+                <option>1 felnőtt, 1 diák</option>
+              </select>
+            </div>
+            <button type="submit" class="dynamic-btn">Keresés</button>
+          </form>
         </div>
       </div>
-</body>
+    </div>
+  </body>
 </html>
