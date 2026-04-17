@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MÁV - Regisztráció</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="navbar">
+        <div class="logo-section">
+          <img src="./images/nohattermavlogo.png" alt="VÁM Logo" class="logo" />
+          <span class="logo-text">MÁV</span>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Főoldal</a>
+          <a href="jegyek.html" class="nav-link">Jegyek</a>
+          <a href="gyik.html" class="nav-link">GYIK</a>
+          <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
+        </div>
+        <div style="justify-self: end;">
+            </div>
+      </div>
+    </header>
+
+    <main class="content-container inner-page">
+      <div style="max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <h2 style="margin-bottom: 20px; color: #003087; text-align: center;">Fiók létrehozása</h2>
+        <form>
+          <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Teljes név</label>
+            <input type="text" placeholder="Példa János" class="input-field" style="width: 100%;" required />
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">E-mail cím</label>
+            <input type="email" placeholder="pelda@email.hu" class="input-field" style="width: 100%;" required />
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Jelszó</label>
+            <input type="password" placeholder="Legalább 8 karakter" class="input-field" style="width: 100%;" required />
+          </div>
+          <div style="margin-bottom: 20px;">
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+              <input type="checkbox" required> Elfogadom az <a href="#" style="color: #0055d4;">ÁSZF</a>-et és az adatkezelési szabályzatot.
+            </label>
+          </div>
+          <button type="submit" class="dynamic-btn" style="width: 100%;">Regisztráció</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+          Van már fiókja? <a href="index.html" style="color: #0055d4; text-decoration: none; font-weight: bold;">Jelentkezzen be itt</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
+    </footer>
+  </body>
+</html>
