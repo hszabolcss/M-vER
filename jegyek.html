@@ -10,8 +10,8 @@
     <header class="topbar">
       <div class="navbar">
         <div class="logo-section">
-            <img src="./images/ujlogo.png" alt="VÁM Logo" class="logo" />
-            <span class="logo-text">MÁV</span>
+          <img src="./images/ujlogo.png" alt="VÁM Logo" class="logo" />
+          <span class="logo-text">MÁV</span>
         </div>
         <div class="nav-menu">
           <a href="index.html" class="nav-link">Főoldal</a>
@@ -19,9 +19,98 @@
           <a href="gyik.html" class="nav-link">GYIK</a>
           <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
         </div>
-        <button class="search-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        </button>
+        <div
+          class="user-menu-container"
+          style="position: relative; justify-self: end"
+        >
+          <button
+            class="search-button"
+            id="login-trigger"
+            aria-label="Bejelentkezés"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <div class="login-dropdown" id="login-dropdown">
+            <h3>Bejelentkezés</h3>
+            <form>
+              <input
+                type="text"
+                placeholder="Felhasználónév vagy e-mail"
+                class="input-field"
+                style="
+                  width: 100%;
+                  margin-bottom: 10px;
+                  padding: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                "
+              />
+              <input
+                type="password"
+                placeholder="Jelszó"
+                class="input-field"
+                style="
+                  width: 100%;
+                  margin-bottom: 10px;
+                  padding: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                "
+              />
+              <div
+                class="login-options"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 15px;
+                  font-size: 0.85rem;
+                "
+              >
+                <label style="display: flex; align-items: center; gap: 5px">
+                  <input type="checkbox" /> Emlékezz rám
+                </label>
+                <a href="#" style="color: #0055d4; text-decoration: none"
+                  >Elfelejtett jelszó?</a
+                >
+              </div>
+              <button
+                type="submit"
+                class="dynamic-btn"
+                style="width: 100%; margin-top: 5px"
+              >
+                Belépés
+              </button>
+              <p
+                style="text-align: center; font-size: 0.85rem; margin-top: 15px"
+              >
+                Nincs még fiókja?
+                <a
+                  href="regisztracio.html"
+                  style="
+                    color: #0055d4;
+                    text-decoration: none;
+                    font-weight: bold;
+                  "
+                  >Regisztráció</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -31,7 +120,11 @@
         <form class="ticket-form">
           <div class="form-group">
             <label>Honnan?</label>
-            <input type="text" placeholder="Indulási állomás" class="input-field" />
+            <input
+              type="text"
+              placeholder="Indulási állomás"
+              class="input-field"
+            />
           </div>
           <div class="form-icon">⇄</div>
           <div class="form-group">
@@ -51,4 +144,5 @@
       <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
     </footer>
   </body>
+  <script src="script.js"></script>
 </html>
