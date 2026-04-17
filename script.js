@@ -127,3 +127,59 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target == modal) modal.style.display = "none";
   };
 });
+
+// Új tartalom az ajánlatokhoz
+const offerContent = {
+  0: {
+    title: "Országbérlet és Vármegyebérlet",
+    img: "https://picsum.photos/id/15/600/300",
+    text: "Az Országbérlettel Magyarország teljes területén, a Vármegyebérlettel pedig az adott vármegyében utazhat korlátlanul a MÁV-START, a Volánbusz, a MÁV-HÉV és a GYSEV járatain. A teljes árú bérletek mellett a nappali és esti tagozatos diákok 90%-os kedvezménnyel válthatják ki bérleteiket."
+  },
+  1: {
+    title: "Kerékpárszállítási szabályok",
+    img: "https://picsum.photos/id/250/600/300",
+    text: "Kerékpár csak az arra kijelölt kocsikban vagy a peronon szállítható, amennyiben nem zavarja az utasforgalmat. Bizonyos vonatokon (pl. InterCity) kerékpárhelyfoglalás is kötelező. A kerékpárjegy ára a megtett távolságtól függ, de váltható Kerékpár Országbérlet is."
+  },
+  2: {
+    title: "Kisállat szállítás",
+    img: "https://picsum.photos/id/237/600/300",
+    text: "Kistestű állatok zárt hordozóban díjmentesen szállíthatók. Kutyák pórázon és szájkosárral, élőállat-jegy megváltása mellett utazhatnak. Egy utas maximum két kutyát vihet magával. Kérjük, mindig tartsa be a higiéniai és biztonsági előírásokat!"
+  }
+};
+
+// Ezt a részt a DOMContentLoaded-en belülre tedd (a hírek kezelője mellé):
+document.querySelectorAll('.offer-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = document.getElementById("news-modal");
+    const modalBody = document.getElementById("modal-body");
+    const index = btn.getAttribute('data-index');
+    const data = offerContent[index];
+
+    modalBody.innerHTML = `
+      <img src="${data.img}" alt="Ajánlat kép">
+      <h2>${data.title}</h2>
+      <p>${data.text}</p>
+      <button class="dynamic-btn" style="margin-top:20px; width:100%" onclick="document.getElementById('news-modal').style.display='none'">Bezárás</button>
+    `;
+    modal.style.display = "block";
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loginTrigger = document.getElementById('login-trigger');
+  const loginDropdown = document.getElementById('login-dropdown');
+
+  if (loginTrigger && loginDropdown) {
+    loginTrigger.addEventListener('click', (e) => {
+      e.stopPropagation(); // Megakadályozza, hogy az esemény továbbmenjen a window-ra
+      loginDropdown.classList.toggle('active');
+    });
+
+    // Bezárás, ha máshová kattintasz az oldalon
+    window.addEventListener('click', (e) => {
+      if (!loginDropdown.contains(e.target) && e.target !== loginTrigger) {
+        loginDropdown.classList.remove('active');
+      }
+    });
+  }
+});
