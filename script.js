@@ -294,3 +294,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const loginTrigger = document.getElementById('login-trigger');
+  const loginDropdown = document.getElementById('login-dropdown');
+
+  if (loginTrigger && loginDropdown) {
+    loginTrigger.addEventListener('click', (e) => {
+      e.stopPropagation(); // Megakadályozza, hogy az esemény továbbmenjen a window-ra
+      loginDropdown.classList.toggle('active');
+    });
+
+    // Bezárás, ha máshová kattintasz az oldalon
+    window.addEventListener('click', (e) => {
+      if (!loginDropdown.contains(e.target) && e.target !== loginTrigger) {
+        loginDropdown.classList.remove('active');
+      }
+    });
+  }
+});
