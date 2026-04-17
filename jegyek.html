@@ -24,7 +24,7 @@
           style="position: relative; justify-self: end"
         >
           <button
-            class="search-button"
+            class="search-button" onclick="showSection('account-section')"
             id="login-trigger"
             aria-label="Bejelentkezés"
           >
@@ -114,35 +114,90 @@
       </div>
     </header>
 
-    <main class="content-container inner-page">
-      <h2>Jegyvásárlás</h2>
-      <div class="ticket-form-container">
-        <form class="ticket-form">
-          <div class="form-group">
-            <label>Honnan?</label>
-            <input
-              type="text"
-              placeholder="Indulási állomás"
-              class="input-field"
-            />
-          </div>
-          <div class="form-icon">⇄</div>
-          <div class="form-group">
-            <label>Hova?</label>
-            <input type="text" placeholder="Célállomás" class="input-field" />
-          </div>
-          <div class="form-group">
-            <label>Dátum</label>
-            <input type="date" class="input-field" />
-          </div>
-          <button type="submit" class="dynamic-btn">Keresés</button>
-        </form>
-      </div>
+    <main class="content-container">
+      
+      <section id="selection-section" class="page-step">
+        <div class="inner-page">
+            <h2>Jegyvásárlás</h2>
+            <div class="ticket-form-container">
+                <form class="ticket-form" onsubmit="event.preventDefault(); alert('Keresés...');">
+                    <div class="form-group">
+                        <label>Honnan?</label>
+                        <input type="text" placeholder="Indulási állomás" class="input-field" />
+                    </div>
+                    <div class="form-icon">⇄</div>
+                    <div class="form-group">
+                        <label>Hova?</label>
+                        <input type="text" placeholder="Célállomás" class="input-field" />
+                    </div>
+                    <button type="submit" class="dynamic-btn">Keresés</button>
+                </form>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="filterProducts('jegy')">Jegyek</button>
+                <button class="tab-btn" onclick="filterProducts('berlet')">Bérletek</button>
+            </div>
+
+            <div id="product-list" class="product-grid">
+                </div>
+        </div>
+      </section>
+
+      <section id="checkout-section" class="page-step hidden">
+        <div class="inner-page">
+            <button class="back-btn" onclick="showSection('selection-section')">← Vissza a választáshoz</button>
+            <h2>Vásárlás véglegesítése</h2>
+            
+            <div class="checkout-wrapper">
+                <div class="summary-card" id="selected-item-info">
+                    </div>
+
+                <form id="purchase-form" class="checkout-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Teljes név</label>
+                            <input type="text" id="cust-name" class="input-field" required placeholder="Minta János">
+                        </div>
+                        <div class="form-group">
+                            <label>Személyigazolvány szám</label>
+                            <input type="text" id="cust-id" class="input-field" required placeholder="123456AB">
+                        </div>
+                    </div>
+                    
+                    <div class="payment-box">
+                        <h3>Fizetési adatok</h3>
+                        <input type="text" class="input-field" placeholder="Kártyaszám" required>
+                        <div class="form-row">
+                            <input type="text" class="input-field" placeholder="Lejárat (MM/YY)" required>
+                            <input type="password" class="input-field" placeholder="CVC" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="dynamic-btn confirm-btn">Fizetés és QR-kód generálása</button>
+                </form>
+            </div>
+        </div>
+      </section>
+
+      <section id="account-section" class="page-step hidden">
+        <div class="inner-page">
+            <div class="section-header">
+                <h2>Saját jegyeim</h2>
+                <button class="dynamic-btn outline" onclick="showSection('selection-section')">+ Új jegy</button>
+            </div>
+            <div id="my-tickets" class="my-tickets-container">
+                </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer">
       <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
   <script src="script.js"></script>
 </html>
