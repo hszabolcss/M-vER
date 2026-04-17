@@ -62,8 +62,8 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  height: 60px;
-  width: 170px;
+  height: 70px;
+  width: 70px;
 }
 .logo-text {
   color: white;
@@ -621,7 +621,7 @@ body {
   width: 300px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 20px;
   display: none; /* Alapból rejtve */
   z-index: 1000;
@@ -666,6 +666,12 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
