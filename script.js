@@ -79,23 +79,51 @@ window.onload = () => {
   }
 };
 
-// Login ablak kezelése
+// Hírek adatai (ezt bővítheted)
+const newsContent = {
+  0: {
+    title: "Tavaszi menetrendi változások",
+    img: "https://picsum.photos/id/1033/600/300",
+    text: "Részletes tájékoztató: Március 1-től a Budapest-Győr vonalon reggelente 10 perccel sűrűbben járnak a vonatok. A délutáni időszakban az InterCity járatok plusz kocsikkal közlekednek a megnövekedett utasforgalom miatt."
+  },
+  1: {
+    title: "Pályakarbantartás a Nyugati vonalán",
+    img: "https://picsum.photos/id/1070/600/300",
+    text: "Figyelem! A hétvégi karbantartás érinti a Nyugati pályaudvarról induló összes zónázó vonatot. Kérjük, használják a kijelölt pótlóbuszokat, amelyek a vasútállomás melletti parkolóból indulnak."
+  },
+  2: {
+    title: "Megújult a VÁM applikáció",
+    img: "https://picsum.photos/id/119/600/300",
+    text: "Az új 2.0-ás verzióban elérhetővé vált az Apple Pay és Google Pay fizetés, valamint mostantól élő térképen követheti a vonatok pontos helyzetét és esetleges késését."
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-    const loginTrigger = document.getElementById('login-trigger');
-    const loginDropdown = document.getElementById('login-dropdown');
+  const modal = document.getElementById("news-modal");
+  const modalBody = document.getElementById("modal-body");
+  const closeBtn = document.querySelector(".close-modal");
 
-    if (loginTrigger && loginDropdown) {
-        // Kattintásra nyitás/zárás
-        loginTrigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            loginDropdown.classList.toggle('active');
-        });
+  // Az összes "Elolvasom" gomb megkeresése
+  document.querySelectorAll('.read-more').forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const data = newsContent[index];
+      
+      // Tartalom összeállítása
+      modalBody.innerHTML = `
+        <img src="${data.img}" alt="Hír kép">
+        <h2>${data.title}</h2>
+        <p>${data.text}</p>
+        <button class="dynamic-btn" style="margin-top:20px; width:100%" onclick="document.getElementById('news-modal').style.display='none'">Bezárás</button>
+      `;
+      
+      modal.style.display = "block";
+    });
+  });
 
-        // Ha máshova kattintunk, záródjon be
-        document.addEventListener('click', (e) => {
-            if (!loginDropdown.contains(e.target) && e.target !== loginTrigger) {
-                loginDropdown.classList.remove('active');
-            }
-        });
-    }
+  // Bezárás gombra vagy a modál mellé kattintva
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (event) => {
+    if (event.target == modal) modal.style.display = "none";
+  };
 });
