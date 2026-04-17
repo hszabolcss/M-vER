@@ -274,7 +274,6 @@ document.querySelectorAll('.offer-btn').forEach(btn => {
     modal.style.display = "block";
   });
 });
-
 document.addEventListener('DOMContentLoaded', () => {
     filterProducts('jegy');
   const loginTrigger = document.getElementById('login-trigger');
