@@ -16,10 +16,10 @@ body {
 }
 
 main {
-  flex: 1; /* Ez kitolja a footert az oldal aljára, ha kevés a tartalom */
+  flex: 1; 
 }
 
-/* Modál alapstílus */
+
 .modal {
   display: none;
   position: fixed;
@@ -28,11 +28,10 @@ main {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Sötétített háttér */
+  background-color: rgba(0, 0, 0, 0.6); 
   backdrop-filter: blur(5px);
 }
 
-/* Modál fehér doboza */
 
 @keyframes modalAnim {
   from {
@@ -45,11 +44,10 @@ main {
   }
 }
 
-/* Modál fehér doboza */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto; /* Kicsit feljebb hoztuk */
-  padding: 40px 30px 30px 30px; /* A felső padding (40px) helyet ad az X-nek */
+  margin: 5% auto; 
+  padding: 40px 30px 30px 30px; 
   border-radius: 15px;
   width: 90%;
   max-width: 650px;
@@ -57,16 +55,16 @@ main {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Bezáró gomb pozícionálása, hogy ne lógjon a képbe */
+
 .close-modal {
   position: absolute;
   right: 15px;
-  top: 10px; /* Feljebb toltuk a fehér keretre */
+  top: 10px; 
   color: #333;
   font-size: 32px;
-  font-weight: 300; /* Vékonyabb, modernebb X */
+  font-weight: 300; 
   cursor: pointer;
-  z-index: 10; /* Hogy biztosan a kép felett legyen */
+  z-index: 10; 
   line-height: 1;
   transition: color 0.2s;
 }
@@ -75,12 +73,12 @@ main {
   color: #003087;
 }
 
-/* Kép formázása a modálon belül */
+
 #modal-body img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-top: 5px; /* Kicsit eltoljuk az X alól */
+  margin-top: 5px; 
   display: block;
 }
 
@@ -105,7 +103,7 @@ main {
   text-align: center;
   width: 100%;
 }
-/* Navigáció */
+
 .topbar {
   background: linear-gradient(to right, #0055d4, #0055d4);
   padding: 0 20px;
@@ -119,12 +117,12 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   height: 78px;
-  display: grid; /* Flex helyett Grid */
-  grid-template-columns: 1fr auto 1fr; /* Három egyenlő oszlop: Bal, Közép, Jobb */
+  display: grid; 
+  grid-template-columns: 1fr auto 1fr; 
   align-items: center;
 }
 
-/* A logó maradjon a bal szélén a saját oszlopának */
+
 .logo-section {
   display: flex;
   align-items: center;
@@ -132,16 +130,16 @@ main {
   justify-self: start;
 }
 
-/* A menü legyen a középső oszlop közepén */
+
 .nav-menu {
   display: flex;
   gap: 38px;
-  justify-self: center; /* Ez teszi abszolút középre */
+  justify-self: center; 
 }
 
-/* A gomb pedig a jobb oldali oszlop végén */
+
 .search-button {
-  justify-self: end; /* Ez tolja ki a jobb szélére */
+  justify-self: end; 
   background: rgba(255, 255, 255, 0.2);
   border: none;
   width: 48px;
@@ -200,7 +198,7 @@ main {
 }
 
 .search-button {
-  margin-left: 400px; /* Növeld ezt az értéket (pl. 80px vagy 100px), amíg elég jobbra nem kerül */
+  margin-left: 400px; 
   background: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -218,7 +216,6 @@ main {
   transform: scale(1.05);
 }
 
-/* Oldalak logikája */
 .page-section {
   display: none;
   animation: fadeIn 0.4s ease-in-out;
@@ -238,7 +235,6 @@ main {
   }
 }
 
-/* Hero */
 .hero-container {
   max-width: 1400px;
   margin: 25px auto 40px;
@@ -257,7 +253,6 @@ main {
   display: block;
 }
 
-/* Service Panel */
 .service-panel {
   position: absolute;
   top: 50%;
@@ -311,7 +306,6 @@ main {
   opacity: 0.7;
 }
 
-/* Dynamic Panel */
 .dynamic-panel {
   position: absolute;
   top: 50%;
@@ -371,8 +365,6 @@ main {
   background: #003087;
   color: white;
 }
-
-/* Progress Section */
 .progress-section {
   max-width: 1400px;
   margin: 40px auto;
@@ -439,8 +431,6 @@ main {
   background: #ffde00;
   width: 0%;
 }
-
-/* Általános konténer belső oldalakhoz és grid-hez */
 .content-container {
   max-width: 1400px;
   margin: 0 auto 60px;
@@ -460,8 +450,6 @@ main {
   display: inline-block;
   padding-bottom: 10px;
 }
-
-/* Hírek szekció (ÚJ) */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -545,8 +533,6 @@ main {
   color: #003087;
   text-decoration: underline;
 }
-
-/* Ajánlatok szekció (ÚJ) */
 .offers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -570,8 +556,6 @@ main {
   margin-bottom: 20px;
   line-height: 1.5;
 }
-
-/* Formák, Inputok (Jegyek és Ügyfélszolgálat) */
 .ticket-form-container {
   background: #f8f9fa;
   padding: 30px;
@@ -618,7 +602,6 @@ main {
   padding-bottom: 5px;
 }
 
-/* GYIK */
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -640,7 +623,6 @@ main {
   line-height: 1.5;
 }
 
-/* Kapcsolat Grid */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -663,7 +645,6 @@ main {
   gap: 15px;
 }
 
-/* Footer */
 .footer {
   background: #222;
   color: white;
@@ -707,8 +688,6 @@ main {
     display: none;
   }
 }
-
-/* Login Dropdown Stílusok */
 .login-dropdown {
   position: absolute;
   top: 60px;
@@ -718,7 +697,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  display: none; /* Alapból rejtve */
+  display: none;
   z-index: 1000;
 }
 
@@ -759,12 +738,12 @@ main {
   font-size: 0.85rem;
   margin-top: 15px;
 }
-/* Segédstílusok */
+
 .hidden {
   display: none !important;
 }
 
-/* Tabok */
+
 .tab-container {
   display: flex;
   gap: 10px;
@@ -783,8 +762,6 @@ main {
   background: #003087;
   color: white;
 }
-
-/* Termék kártyák */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -828,8 +805,6 @@ main {
 .product-card:hover .buy-btn {
   background: #ffde00;
 }
-
-/* Checkout */
 .checkout-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -863,7 +838,6 @@ main {
   margin-bottom: 15px;
 }
 
-/* Jegyek a profilban */
 .ticket-item {
   background: white;
   border-radius: 15px;
