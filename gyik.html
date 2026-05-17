@@ -1,150 +1,109 @@
 <!doctype html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MÁV - GYIK</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="navbar">
-        <div class="logo-section">
-          <img src="./images/ujlogo.png" alt="VÁM Logo" class="logo" />
-          <span class="logo-text">MÁV</span>
-        </div>
-        <div class="nav-menu">
-          <a href="index.html" class="nav-link">Főoldal</a>
-          <a href="jegyek.html" class="nav-link">Jegyek</a>
-          <a href="gyik.html" class="nav-link active">GYIK</a>
-          <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
-        </div>
-        <div
-          class="user-menu-container"
-          style="position: relative; justify-self: end"
-        >
-          <button
-            class="search-button"
-            id="login-trigger"
-            aria-label="Bejelentkezés"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </button>
-
-          <div class="login-dropdown" id="login-dropdown">
-            <h3>Bejelentkezés</h3>
-            <form>
-              <input
-                type="text"
-                placeholder="Felhasználónév vagy e-mail"
-                class="input-field"
-                style="
-                  width: 100%;
-                  margin-bottom: 10px;
-                  padding: 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                "
-              />
-              <input
-                type="password"
-                placeholder="Jelszó"
-                class="input-field"
-                style="
-                  width: 100%;
-                  margin-bottom: 10px;
-                  padding: 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                "
-              />
-              <div
-                class="login-options"
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  margin-bottom: 15px;
-                  font-size: 0.85rem;
-                "
-              >
-                <label style="display: flex; align-items: center; gap: 5px">
-                  <input type="checkbox" /> Emlékezz rám
-                </label>
-                <a href="#" style="color: #0055d4; text-decoration: none"
-                  >Elfelejtett jelszó?</a
-                >
-              </div>
-              <button
-                type="submit"
-                class="dynamic-btn"
-                style="width: 100%; margin-top: 5px"
-              >
-                Belépés
-              </button>
-              <p
-                style="text-align: center; font-size: 0.85rem; margin-top: 15px"
-              >
-                Nincs még fiókja?
-                <a
-                  href="regisztracio.html"
-                  style="
-                    color: #0055d4;
-                    text-decoration: none;
-                    font-weight: bold;
-                  "
-                  >Regisztráció</a
-                >
-              </p>
-            </form>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MÁV – GYIK</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="navbar">
+    <div class="logo-section">
+      <img src="./images/ujlogo.png" alt="MÁV" class="logo"/>
+      <span class="logo-text">MÁV</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Főoldal</a>
+      <a href="jegyek.html" class="nav-link">Jegyek</a>
+      <a href="gyik.html" class="nav-link active">GYIK</a>
+      <a href="kapcsolat.html" class="nav-link">Ügyfélszolgálat</a>
+    </nav>
+    <div class="user-menu-container">
+      <span id="nav-username" style="font-size:.88rem;font-weight:600;color:#6e6e73;display:none;"></span>
+      <button class="user-btn" id="login-trigger" aria-label="Bejelentkezés">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <button class="avatar-btn" id="avatar-btn" aria-label="Fiók"></button>
+      <div class="login-dropdown" id="login-dropdown">
+        <div id="drop-auth">
+          <div class="drop-tabs">
+            <button class="drop-tab active" id="tab-login" onclick="switchTab('login')">Bejelentkezés</button>
+            <button class="drop-tab" id="tab-reg" onclick="switchTab('reg')">Regisztráció</button>
+          </div>
+          <div class="drop-panel active" id="panel-login">
+            <div class="msg" id="login-msg"></div>
+            <div class="form-group"><label>E-mail</label><input type="email" id="login-email" class="input-field" placeholder="pelda@email.hu"/></div>
+            <div class="form-group"><label>Jelszó</label><input type="password" id="login-pass" class="input-field" placeholder="••••••••"/></div>
+            <button class="btn btn-primary btn-full" onclick="doLogin()">Bejelentkezés</button>
+          </div>
+          <div class="drop-panel" id="panel-reg">
+            <div class="msg" id="reg-msg"></div>
+            <div class="form-group"><label>Teljes név</label><input type="text" id="reg-nev" class="input-field" placeholder="Minta János"/></div>
+            <div class="form-group"><label>E-mail</label><input type="email" id="reg-email" class="input-field" placeholder="pelda@email.hu"/></div>
+            <div class="form-group"><label>Jelszó</label><input type="password" id="reg-pass" class="input-field" placeholder="Min. 8 karakter"/></div>
+            <button class="btn btn-primary btn-full" onclick="doRegister()">Fiók létrehozása</button>
           </div>
         </div>
-      </div>
-    </header>
-
-    <main class="content-container inner-page">
-      <h2>Gyakori Kérdések (GYIK)</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h4>Hogyan tudom visszaváltani a jegyemet?</h4>
-          <p>
-            Az online vásárolt jegyeket az indulás előtt 1 órával az
-            applikációban vagy a weboldalon a profiljába belépve tudja
-            visszaváltani.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h4>Mi a teendő, ha késik a vonat?</h4>
-          <p>
-            Jelentős késés esetén automatikusan kártérítésre jogosult, melyet
-            online felületünkön igényelhet a jegyszám megadásával.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h4>Mennyibe kerül a kerékpárjegy?</h4>
-          <p>
-            A kerékpárjegy ára távolságtól függetlenül egységesen 500 Ft a
-            kijelölt vonatokon.
-          </p>
+        <div id="drop-user" style="display:none;">
+          <p style="font-weight:700;margin-bottom:4px;" id="drop-username"></p>
+          <p style="font-size:.85rem;color:#6e6e73;margin-bottom:20px;" id="drop-email"></p>
+          <a href="jegyek.html" class="btn btn-secondary btn-full" style="margin-bottom:10px;">Saját jegyeim</a>
+          <button class="btn btn-outline btn-full" onclick="doLogout()">Kijelentkezés</button>
         </div>
       </div>
-    </main>
+    </div>
+  </div>
+</header>
 
-    <footer class="footer">
-      <p>&copy; 2026 VÁM - Minden jog fenntartva.</p>
-    </footer>
-  </body>
-  <script src="script.js"></script>
+<main>
+  <div class="page-wrap">
+    <div class="section-label" style="margin-bottom:6px;">Segítség</div>
+    <h1 class="section-title" style="margin-bottom:8px;">Gyakori kérdések</h1>
+    <p style="color:#6e6e73;margin-bottom:36px;">Találja meg a választ a leggyakrabban feltett kérdésekre.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Hogyan tudom visszaváltani a jegyemet?</div>
+        <div class="faq-a">Az online vásárolt jegyeket az indulás előtt 1 órával az applikációban vagy a weboldalon a profiljába belépve tudja visszaváltani. A visszaváltott összeg 3–5 munkanapon belül kerül jóváírásra.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Mi a teendő, ha késik a vonat?</div>
+        <div class="faq-a">Jelentős késés esetén automatikusan kártérítésre jogosult, melyet online felületünkön igényelhet a jegyszám megadásával. 30 perc felett 25%, 60 perc felett 50% visszatérítés jár.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Mennyibe kerül a kerékpárjegy?</div>
+        <div class="faq-a">A kerékpárjegy ára távolságtól függetlenül egységesen 500 Ft a kijelölt vonatokon. InterCity vonaton helyfoglalás is szükséges, ami további 300 Ft-ba kerül.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Hogyan működik az e-jegy?</div>
+        <div class="faq-a">Vásárlás után egy QR-kódot kap, amelyet a jegykezelő a vonaton leolvas. Nincs szükség nyomtatásra – elég a telefonja képernyője. A jegy a "Saját jegyeim" menüpontban érhető el.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Mikor érvényes a diákkedvezmény?</div>
+        <div class="faq-a">A nappali tagozatos diákok 90%-os kedvezménnyel vásárolhatnak bérletet érvényes diákigazolvány bemutatásával. A kedvezmény az összes MÁV-START, Volánbusz és HÉV járatra vonatkozik.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Milyen fizetési módok érhetők el?</div>
+        <div class="faq-a">Bankkártyával (Visa, Mastercard), Apple Pay-jel, Google Pay-jel és MÁV-pontokkal is fizethet. Készpénzes fizetés csak a pénztáraknál és automatáknál lehetséges.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">MÁV</span>
+    <div class="footer-links">
+      <a href="gyik.html">GYIK</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+      <a href="#">Adatvédelem</a>
+    </div>
+    <span class="footer-copy">© 2026 MÁV – Minden jog fenntartva.</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
 </html>
